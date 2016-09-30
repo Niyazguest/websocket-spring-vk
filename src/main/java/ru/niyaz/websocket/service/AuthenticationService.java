@@ -45,10 +45,12 @@ public class AuthenticationService {
     public boolean authenticateUser(String code) {
         try {
             String siteName = (String) initialContext.lookup("java:/comp/env/siteName");
+            String vkClientId = (String) initialContext.lookup("java:/comp/env/vkClientId");
+            String vkClientSecret = (String) initialContext.lookup("java:/comp/env/vkClientSecret");
             CloseableHttpClient httpClient = HttpClients.createDefault();
             URI uri = new URIBuilder("https://oauth.vk.com/access_token")
-                    .setParameter("client_id", "5422686")
-                    .setParameter("client_secret", "D8hyl9P3xHAHYh9kAeJE")
+                    .setParameter("client_id", vkClientId)
+                    .setParameter("client_secret", vkClientSecret)
                     .setParameter("redirect_uri", siteName + "/login")
                     .setParameter("code", code)
                     .build();
