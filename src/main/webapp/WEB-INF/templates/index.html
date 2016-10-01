@@ -11,7 +11,7 @@
     <link rel="stylesheet" th:href="@{/resources/bootstrap-3.3.5-dist/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/resources/css/style.css}"/>
     <script>
-         var stomp = Stomp.over(new SockJS("/chat"));
+         var stomp = Stomp.over(new SockJS("/chat/chat"));
          stomp.connect("guest", "guest", connectCallback, errorCallback);
 
         $(document).ready(function () {
