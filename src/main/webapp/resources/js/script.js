@@ -52,6 +52,6 @@ var errorCallback = function (error) {
 
 
 function registrationVK() {
-    window.location = "https://oauth.vk.com/authorize?client_id=5422686&redirect_uri=" + window.location.origin + "/login&display=page&response_type=code&v=5.50&state=abc";
+    window.location = "https://oauth.vk.com/authorize?client_id=5422686&redirect_uri=" + window.location.origin + "chat/login&display=page&response_type=code&v=5.50&state=abc";
 }
 
