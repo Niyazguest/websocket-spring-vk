@@ -66,8 +66,8 @@ public class AuthenticationService {
                 JSONObject userInfo = getUserInfo(httpClient, userID, accessToken);
 
                 if (!userInfo.has("error")) {
-                    String firstName = new String(userInfo.getString("first_name").getBytes(), "UTF-8");
-                    String lastName = new String(userInfo.getString("last_name").getBytes(), "UTF-8");
+                    String firstName = userInfo.getString("first_name");
+                    String lastName = userInfo.getString("last_name");
                     String photo50URL = userInfo.getString("photo_50");
                     String pageURL = "https://vk.com/" + userInfo.getString("domain");
                     UserInfo principal = new UserInfo(firstName, lastName, photo50URL, userID, pageURL);
